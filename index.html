@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wallpaper</title>
+    <style>
+        section{position: relative; overflow: hidden;/* height: 100vh;*/;}
+        body {overflow: hidden; margin: 0;}
+        h1 {display: none;}
+        img {display: block; width: 100%;}
+        img:not(:first-of-type) {position: absolute; top: 0; left: 0; mix-blend-mode: color-dodge;}
+        img:nth-of-type(odd):not(:first-of-type) {
+            animation: upDown 1s both alternate infinite linear;    /*img:nth-of-type(odd):not(:first-of-type)는 첫번째 이미지를 제외한 홀수 번호 이미지*/
+        }
+        img:nth-of-type(even) {
+            animation: zigzag 0.8s 0.4s both alternate infinite linear;     /*img:nth-of-type(even)는 짝수 번호 이미지*/
+        }
+
+        @keyframes upDown {
+            from {transform: translateY(-30px) scale(1); opacity: 1;}
+            to {transform: translateY(30px) scale(1.2); opacity: 0.2}
+        }
+        @keyframes zigzag {
+            from {transform: translateX(-30px) scale(1.2);  opacity: 0.2}
+            to {transform: translateX(30px) scale(1);  opacity: 1}
+        }
+       
+
+    </style>
+</head>
+<body>
+    <section>
+        <h1>wakkpaper</h1>
+        <img src="images/bg.jpg" alt="배경">
+        <img src="images/1.png" alt="패스">
+        <img src="images/2.png" alt="패스">
+        <img src="images/3.png" alt="패스">
+        <img src="images/4.png" alt="패스">
+        <img src="images/5.png" alt="패스">
+        <img src="images/6.png" alt="패스">
+    </section>
+</body>
+</html>
